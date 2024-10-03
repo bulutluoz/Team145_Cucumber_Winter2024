@@ -64,26 +64,31 @@ public class TestotomasyonuStepdefinitions {
 
     @Then("account linkini tiklar")
     public void account_linkini_tiklar() {
-
+        testotomasyonPage.accountLinki.click();
     }
     @When("email olarak {string} girer")
-    public void email_olarak_girer(String string) {
+    public void email_olarak_girer(String configurationEmailTuru) {
 
+        testotomasyonPage.emailKutusu.sendKeys(  ConfigReader.getProperty(configurationEmailTuru)  );
     }
     @When("password olarak {string} girer")
-    public void password_olarak_girer(String string) {
-
+    public void password_olarak_girer(String configurationPasswordTuru) {
+        testotomasyonPage.passwordKutusu.sendKeys( ConfigReader.getProperty(configurationPasswordTuru));
     }
     @When("login butonuna basar")
     public void login_butonuna_basar() {
-
+        testotomasyonPage.signInButonu.click();
     }
     @Then("basarili olarak giris yapilabildigini test eder")
     public void basarili_olarak_giris_yapilabildigini_test_eder() {
 
+        Assertions.assertTrue(testotomasyonPage.signoutButonu.isDisplayed());
+
     }
     @Then("logout butonuna basar")
     public void logout_butonuna_basar() {
+
+        testotomasyonPage.signoutButonu.click();
 
     }
 
