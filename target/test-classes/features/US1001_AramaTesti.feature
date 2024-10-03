@@ -2,7 +2,6 @@
   Feature: US1001 Arama Testi
 
     Scenario: TC01 kullanici phone arattiginda urun bulabilmeli
-
       Given kullanici testotomasyonu anasayfaya gider
       Then arama kutusuna phone yazip aratir
       And arama sonucunda urun bulunabildigini test eder

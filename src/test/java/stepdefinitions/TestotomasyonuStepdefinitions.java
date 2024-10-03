@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import pages.TestotomasyonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class TestotomasyonuStepdefinitions {
 
@@ -48,4 +49,42 @@ public class TestotomasyonuStepdefinitions {
     public void aramaKutusunaBabyYazipAratir() {
         testotomasyonPage.aramaKutusu.sendKeys("baby" + Keys.ENTER);
     }
+
+    @When("arama kutusuna {string} yazip aratir")
+    public void aramaKutusunaYazipAratir(String aranacakElement) {
+
+        testotomasyonPage.aramaKutusu.sendKeys(aranacakElement + Keys.ENTER);
+    }
+
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int beklenecekSure) {
+
+        ReusableMethods.bekle(beklenecekSure);
+    }
+
+    @Then("account linkini tiklar")
+    public void account_linkini_tiklar() {
+
+    }
+    @When("email olarak {string} girer")
+    public void email_olarak_girer(String string) {
+
+    }
+    @When("password olarak {string} girer")
+    public void password_olarak_girer(String string) {
+
+    }
+    @When("login butonuna basar")
+    public void login_butonuna_basar() {
+
+    }
+    @Then("basarili olarak giris yapilabildigini test eder")
+    public void basarili_olarak_giris_yapilabildigini_test_eder() {
+
+    }
+    @Then("logout butonuna basar")
+    public void logout_butonuna_basar() {
+
+    }
+
 }
