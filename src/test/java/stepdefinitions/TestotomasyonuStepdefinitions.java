@@ -92,4 +92,9 @@ public class TestotomasyonuStepdefinitions {
 
     }
 
+    @And("giris yapilamadigini test eder")
+    public void girisYapilamadiginiTestEder() {
+
+        Assertions.assertTrue(testotomasyonPage.emailKutusu.isDisplayed());
+    }
 }
