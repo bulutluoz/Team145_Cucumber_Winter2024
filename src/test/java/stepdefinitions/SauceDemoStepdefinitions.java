@@ -27,7 +27,7 @@ public class SauceDemoStepdefinitions {
     }
     @When("saucedemo add to Cart butonuna basar")
     public void saucedemo_add_to_cart_butonuna_basar() {
-
+        sauceDemoPage.addToCartButonu.click();
     }
     @Then("saucedemo alisveris sepetine tiklar")
     public void saucedemo_alisveris_sepetine_tiklar() {
