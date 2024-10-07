@@ -1,11 +1,13 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.*;
+import org.junit.jupiter.api.Assertions;
 import pages.SauceDemoPage;
 
 public class SauceDemoStepdefinitions {
 
     SauceDemoPage sauceDemoPage = new SauceDemoPage();
+    String ilkUrunIsmi;
 
     @Then("saucedemo username kutusuna {string} yazar")
     public void saucedemo_username_kutusuna_yazar(String verilenUsername) {
@@ -21,7 +23,7 @@ public class SauceDemoStepdefinitions {
     }
     @Then("ilk urunun ismini kaydeder ve bu urunun sayfasina gider")
     public void ilk_urunun_ismini_kaydeder_ve_bu_urunun_sayfasina_gider() {
-        String ilkUrunIsmi = sauceDemoPage.ilkUrunIsimElementi.getText();
+        ilkUrunIsmi = sauceDemoPage.ilkUrunIsimElementi.getText();
 
         sauceDemoPage.ilkUrunIsimElementi.click();
     }
@@ -31,10 +33,16 @@ public class SauceDemoStepdefinitions {
     }
     @Then("saucedemo alisveris sepetine tiklar")
     public void saucedemo_alisveris_sepetine_tiklar() {
-
+        sauceDemoPage.alisverisSepetElementi.click();
     }
     @Then("sectigi urunun basarili olarak sepete eklendigini test eder")
     public void sectigi_urunun_basarili_olarak_sepete_eklendigini_test_eder() {
+
+        String expectedurunIsmi = ilkUrunIsmi;
+        String actualIsim = sauceDemoPage.sepettekiUrunIsimElementi
+                                        .getText();
+
+        Assertions.assertEquals(expectedurunIsmi,actualIsim);
 
     }
 }
