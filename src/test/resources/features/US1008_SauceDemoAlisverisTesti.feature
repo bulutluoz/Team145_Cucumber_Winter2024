@@ -1,7 +1,7 @@
 
 Feature: US1008 Kullanici alisveris yapar
 
-  @wip
+
   Scenario: TC14 kullanici sectigi urunu satin alabilmeli
 
     Given kullanici "sauceUrl" anasayfaya gider
