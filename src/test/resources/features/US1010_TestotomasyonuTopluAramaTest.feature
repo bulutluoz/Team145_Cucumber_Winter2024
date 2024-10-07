@@ -1,8 +1,8 @@
 
   Feature: US1010 kullanici verilen listedeki tum urunler icin arama testi yapar
 
-    @wip
-    Scenario Outline: : TC16 liste olarak verilen urunler icin arama yapilabilmeli
+
+    Scenario Outline: TC16 liste olarak verilen urunler icin arama yapilabilmeli
 
       Given kullanici "toUrl" anasayfaya gider
       Then arama kutusuna "<aranacakKelimeler>" yazip aratir
