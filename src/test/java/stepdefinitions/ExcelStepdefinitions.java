@@ -4,12 +4,17 @@ import io.cucumber.java.en.Then;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Keys;
+import pages.TestotomasyonPage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ExcelStepdefinitions {
+
+    TestotomasyonPage testotomasyonPage = new TestotomasyonPage();
 
     String excelSatirindakiUrunIsmi ;
     Double excelSatirindakiMinUrunMiktari ;
@@ -33,11 +38,18 @@ public class ExcelStepdefinitions {
 
     @Then("urun ismini testotomasyonu sayfasinda aratir ve bulunan sonuc sayisini kaydeder")
     public void urun_ismini_testotomasyonu_sayfasinda_aratir_ve_bulunan_sonuc_sayisini_kaydeder() {
+        testotomasyonPage.aramaKutusu.sendKeys(excelSatirindakiUrunIsmi + Keys.ENTER);
+
+        String aramaSonucuStr = testotomasyonPage.aramaSonucuElementi.getText(); // 3 Products Found
+        aramaSonucuStr = aramaSonucuStr.replaceAll("\\D",""); // "3"
+
+        toSayfasindaBulunanUrunSayisi = Double.parseDouble(aramaSonucuStr);
 
     }
     @Then("bulunan sonuc sayisinin {string} da verilen min. miktara esit veya daha fazla oldugunu test eder")
-    public void bulunan_sonuc_sayisinin_da_verilen_min_miktara_esit_veya_daha_fazla_oldugunu_test_eder(String string) {
+    public void bulunan_sonuc_sayisinin_da_verilen_min_miktara_esit_veya_daha_fazla_oldugunu_test_eder(String istenenSatir) {
 
+        Assertions.assertTrue(excelSatirindakiMinUrunMiktari <= toSayfasindaBulunanUrunSayisi);
     }
 
 
