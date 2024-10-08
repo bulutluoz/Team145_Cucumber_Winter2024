@@ -1,6 +1,6 @@
 Feature: US1013 WebDriverUniversity negatif login testi
 
-  @wip
+  @wip @rapor
   Scenario: TC19 fake degerler ile giris yapilamamali
 
     Given kullanici "webUniUrl" anasayfaya gider
