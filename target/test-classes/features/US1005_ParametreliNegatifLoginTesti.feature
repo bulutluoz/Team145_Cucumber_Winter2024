@@ -10,7 +10,7 @@
       Then login butonuna basar
       And giris yapilamadigini test eder
       And 2 saniye bekler
-      And sayfayi kapatir
+
 
 
     Scenario: TC10 gecersiz password ile giris yapilamamali
@@ -21,7 +21,7 @@
       Then login butonuna basar
       And giris yapilamadigini test eder
       And 2 saniye bekler
-      And sayfayi kapatir
+
 
 
     Scenario: TC11 gecersiz email gecersiz password testi
@@ -32,7 +32,7 @@
       Then login butonuna basar
       And giris yapilamadigini test eder
       And 2 saniye bekler
-      And sayfayi kapatir
+
 
 
 

@@ -7,6 +7,6 @@
       When arama kutusuna "backpack" yazip aratir
       Then arama sonucunda urun bulunabildigini test eder
       And 5 saniye bekler
-      And sayfayi kapatir
+
 
       # cucumber'da feature'a yazilan sayilar parametre olarak algilanir

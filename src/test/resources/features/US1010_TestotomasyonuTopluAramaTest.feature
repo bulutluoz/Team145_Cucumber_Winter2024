@@ -8,7 +8,7 @@
       Then arama kutusuna "<aranacakKelimeler>" yazip aratir
       And arama sonucunda urun bulunabildigini test eder
       Then 1 saniye bekler
-      And sayfayi kapatir
+
 
     Examples:
     |aranacakKelimeler|
