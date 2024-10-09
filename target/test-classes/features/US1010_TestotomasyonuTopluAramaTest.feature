@@ -1,7 +1,7 @@
 
   Feature: US1010 kullanici verilen listedeki tum urunler icin arama testi yapar
 
-
+    @smoke
     Scenario Outline: TC16 liste olarak verilen urunler icin arama yapilabilmeli
 
       Given kullanici "toUrl" anasayfaya gider

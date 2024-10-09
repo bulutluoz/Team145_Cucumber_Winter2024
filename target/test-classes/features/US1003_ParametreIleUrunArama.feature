@@ -1,6 +1,6 @@
 
   Feature: US1003 Kullanici parametre olarak yazdigi kelimeyi aratir
-    @paralel1
+    @paralel1 @smoke
     Scenario: TC07 kullanici istedigi kelimeyi aratabilmeli
 
       Given kullanici testotomasyonu anasayfaya gider

@@ -1,7 +1,7 @@
 
   Feature: US1005 gecersiz bilgilerle giris yapilamaz
 
-    @paralel1
+    @paralel1 @smoke
     Scenario: TC09 gecersiz email ile giris yapilamamali
 
       Given kullanici testotomasyonu anasayfaya gider

@@ -113,12 +113,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.0.0-M1</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <includes>
-                        <include>**/runners/*ParalelRun*.java</include>
+                        <include>**/runners/*Runner*.java</include>
                         <!-- runners package altinda
                              calismasini istedigimiz Runner'larin
                              isimlerindeki ortak bolumu yaziyoruz-->
@@ -128,11 +128,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.0.0-M1</version>
                 <configuration>
                     <parallel>classes</parallel>
                     <forkMode>perthread</forkMode>
-                    <threadCount>2</threadCount> <!-- Ayni anda calisacak thread sayisi -->
+                    <threadCount>1</threadCount> <!-- Ayni anda calisacak thread sayisi -->
                     <reuseForks>false</reuseForks>
                     <argLine>-Duser.language=en</argLine>
                     <argLine>-Xmx1024m</argLine>
@@ -140,7 +140,7 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/runners/*ParalelRun*.java</include>
+                        <include>**/runners/*Runner*.java</include>
                         <!-- runners package altinda
                              calismasini istedigimiz Runner'larin
                              isimlerindeki ortak bolumu yaziyoruz-->

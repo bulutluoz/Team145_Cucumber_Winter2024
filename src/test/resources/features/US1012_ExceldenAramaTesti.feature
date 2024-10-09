@@ -1,7 +1,7 @@
 
   Feature: US1012 Excel ile toplu arama
 
-    @rapor
+    @rapor @smoke
     Scenario Outline: TC18 arama sonucunda excelde verilen min sonuctan fazla urun bulunabilmeli
 
       Given kullanici "toUrl" anasayfaya gider

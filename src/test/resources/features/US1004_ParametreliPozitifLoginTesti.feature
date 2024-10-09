@@ -1,7 +1,7 @@
 
   Feature: US1004 kullanici gecerli bilgilerle giris yapar
 
-    @hook @paralel2
+    @hook @paralel2 @smoke
     Scenario: TC08 kullanici gecerli bilgilerle giris yapabilmeli
 
       Given kullanici testotomasyonu anasayfaya gider
